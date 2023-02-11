@@ -52,7 +52,7 @@ object Parser {
 
   private def readerAndHeader(str: String, separator: Char): (CSVReader, Array[String]) = {
     val reader = new CSVReader(new StringReader(str), separator)
-    val header = reader.next.getOrElse(Array.empty)
+    val header = reader.next.getOrElse(Array.empty[String])
     (reader, header)
   }
 }
